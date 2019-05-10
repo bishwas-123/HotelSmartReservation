@@ -1,5 +1,7 @@
 package com.hsr.model;
 
+import java.time.LocalDate;
+
 public class Staff extends Person {
     Roll roll;
 
@@ -18,7 +20,7 @@ public class Staff extends Person {
 
     @Override
     void setFirstName(String firstName) {
-
+        this.firstName=firstName;
     }
 
     @Override
@@ -28,7 +30,7 @@ public class Staff extends Person {
 
     @Override
     void setMidName(String midName) {
-
+        this.midName=midName;
     }
 
     @Override
@@ -38,7 +40,7 @@ public class Staff extends Person {
 
     @Override
     void setLastName(String lastName) {
-
+        this.lastName=lastName;
     }
 
     @Override
@@ -48,7 +50,7 @@ public class Staff extends Person {
 
     @Override
     void setPhone(String phone) {
-
+        this.phone=phone;
     }
 
     @Override
@@ -58,6 +60,14 @@ public class Staff extends Person {
 
     @Override
     void setAddress(Address address) {
-
+        this.address=address;
+    }
+    @Override
+    public Roll getRoll() {
+        return this.roll;
+    }
+    @Override
+    public LocalDate getCreateDate(){
+        return this.createDate;
     }
 }

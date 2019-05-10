@@ -1,11 +1,14 @@
 package com.hsr.model;
 
-public class Customer extends Person {
+import java.time.LocalDate;
 
-    Roll roll;
+public class Customer extends Person {
+    private int reward;
+
     public Customer(String fname, String lname, String phone){
         super(fname,lname,phone);
-        roll=Roll.Customer;
+        this.roll=Roll.Customer;
+        this.reward=0;
     }
     public Customer(String fname, String mname, String lname, String phone){
         this(fname,lname,phone);
@@ -51,5 +54,20 @@ public class Customer extends Person {
     public void setAddress(Address address) {
         this.address = address;
     }
+    @Override
+    public Roll getRoll() {
+        return this.roll;
+    }
+    @Override
+    public LocalDate getCreateDate(){
+        return this.createDate;
+    }
 
+    public int getReward() {
+        return reward;
+    }
+
+    public void addReward(int reward) {
+        this.reward+=reward;
+    }
 }
