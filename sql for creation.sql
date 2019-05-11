@@ -1,21 +1,24 @@
 create database if not exists hsr_db;
 use hsr_db;
+drop table people;
 create table People(
-Id int primary key,
+Id int primary key auto_increment,
+CreateDate datetime not null,
 Name varchar (30) not null,
 Address varchar (50) not null,
 Phone varchar (10) not null
 );
-alter table Staff
-add column CreateDate datetime not null after id;
+drop table staff;
 create table Staff(
-Id int primary key,
-UserId varchar (10) unique not null,
+Id int primary key auto_increment,
+CreateDate datetime not null,
+StaffId varchar (10) unique not null,
 Password varchar (20) not null,
 Roll varchar (20) not null,
 foreign key fk_Roll(Roll) references Rolls(Roll),
 foreign key fk_peopleId(Id) references People(Id)
 );
+
 create table Rolls(
 id int primary key,
 Roll varchar (20) not null unique
