@@ -1,12 +1,19 @@
-package com.hsr.model;
+package com.hsr.demo.application.model.user;
 
+import javax.persistence.*;
 
+@Entity
 public class Address {
-    String addressline="";
-    String city="";
-    String state="";
-    String zip="";
-    String country="";
+    @Id
+    private Integer id;
+    private String addressline="";
+    private String city="";
+    private String state="";
+    private String zip="";
+    private String country="";
+    @OneToOne
+    @MapsId
+    private Personal_info person;
 
     public Address(){
 

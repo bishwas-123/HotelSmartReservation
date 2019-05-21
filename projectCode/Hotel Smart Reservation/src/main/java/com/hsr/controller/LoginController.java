@@ -1,5 +1,6 @@
 package com.hsr.controller;
 
+import com.hsr.entities.Account;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,9 +23,9 @@ public class LoginController {
 
 	//to check login credential
 	@RequestMapping (value="/login", method=RequestMethod.POST)
-	public String login(@ModelAttribute(name="loginForm") LoginForm loginForm, Model model) {
-		String username=loginForm.getUsername();
-		String password=loginForm.getPassword();
+	public String login(@ModelAttribute(name="loginForm") Account account, Model model) {
+		String username=account.getUserName();
+		String password=account.getPassword();
 		
 		if(username.equals("admin") && password.equals("password"))
 			return "home";
