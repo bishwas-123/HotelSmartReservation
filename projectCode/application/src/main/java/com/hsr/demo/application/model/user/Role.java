@@ -4,20 +4,20 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Roll {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     @ManyToMany(mappedBy = "rollSet")
     private Set<Account> accountSet;
-    private String roll;
+    private String role;
 
-    public Roll(Set<Account> accountSet, String roll) {
+    public Role(Set<Account> accountSet, String roll) {
         this.accountSet = accountSet;
-        this.roll = roll;
+        this.role = roll;
     }
 
-    public Roll() {
+    public Role() {
     }
 
     public Integer getId() {
@@ -36,12 +36,12 @@ public class Roll {
         this.accountSet = accountSet;
     }
 
-    public String getRoll() {
-        return roll;
+    public String getRole() {
+        return role;
     }
 
-    public void setRoll(String roll) {
-        this.roll = roll;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public void addInAccountSet(Account account){

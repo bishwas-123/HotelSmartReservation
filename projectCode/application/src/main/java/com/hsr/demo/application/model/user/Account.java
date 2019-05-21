@@ -1,6 +1,11 @@
 package com.hsr.demo.application.model.user;
 
+import com.hsr.demo.application.model.review.Review;
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -12,7 +17,7 @@ public class Account {
 
     @ManyToOne
     @JoinColumn(name = "info_id")
-    private Personal_info info;
+    private Person info;
 
     @ManyToMany
     @JoinTable(
@@ -20,20 +25,31 @@ public class Account {
             joinColumns = @JoinColumn(name = "account_id"),
             inverseJoinColumns = @JoinColumn(name = "roll_id")
     )
-    private Set<Roll> rollSet;
+    private Set<Role> rollSet;
 
 //    @Enumerated(EnumType.STRING)
 //    @Column(name = "roll")
 //    private AccountRoll roll;
-
+    @NotNull(message = "User name is required")
     private String userName;
+
+    @NotNull(message = "Password is required")
+    //@Password
     private String password;
+
+    @NotNull(message = "Email address is required")
+    @Email
     private String emailAddress;
+
+    @CreatedDate
     private LocalDate createdDate;
 
     private Integer reward;
 
-    public Account(Personal_info info, Set<Roll> rollSet, String userName, String password,
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Review review;
+
+    public Account(Person info, Set<Role> rollSet, String userName, String password,
                    String emailAddress) {
         this.info = info;
         this.rollSet = rollSet;
@@ -67,27 +83,27 @@ public class Account {
         this.id = id;
     }
 
-    public Personal_info getInfo() {
+    public Person getInfo() {
         return info;
     }
 
-    public void setInfo(Personal_info info) {
+    public void setInfo(Person info) {
         this.info = info;
     }
 
-    public Set<Roll> getRollSet() {
+    public Set<Role> getRollSet() {
         return rollSet;
     }
 
-    public void setRollSet(Set<Roll> rollSet) {
+    public void setRollSet(Set<Role> rollSet) {
         this.rollSet = rollSet;
     }
 
-    public void addInRollSet(Roll roll){
+    public void addInRollSet(Role roll){
         this.rollSet.add(roll);
     }
 
-    public void removeFromRollSet(Roll roll){
+    public void removeFromRollSet(Role roll){
         this.rollSet.remove(roll);
     }
     public String getUserName() {
@@ -120,5 +136,13 @@ public class Account {
 
     public void setCreatedDate(LocalDate createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public Review getReview() {
+        return review;
+    }
+
+    public void setReview(Review review) {
+        this.review = review;
     }
 }

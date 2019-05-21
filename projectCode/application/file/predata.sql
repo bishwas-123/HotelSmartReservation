@@ -24,17 +24,17 @@ CREATE TABLE IF NOT EXISTS `personal_info`
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `roll`
+CREATE TABLE IF NOT EXISTS `role`
 (
     `id`   int(11) NOT NULL AUTO_INCREMENT,
-    `roll` varchar(255) DEFAULT NULL,
+    `role` varchar(255) DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
 -- ------------------------------------------------
-insert into `roll` (`roll`) values ('admin');
-insert into `roll` (`roll`) values ('manager');
-insert into `roll` (`roll`) values ('staff');
-insert into `roll` (`roll`) values ('customer');
+insert into `role` (`role`) values ('admin');
+insert into `role` (`role`) values ('manager');
+insert into `role` (`role`) values ('staff');
+insert into `role` (`role`) values ('customer');
 -- ------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `account`

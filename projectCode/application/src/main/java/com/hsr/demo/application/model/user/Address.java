@@ -11,9 +11,11 @@ public class Address {
     private String state="";
     private String zip="";
     private String country="";
-    @OneToOne
-    @MapsId
-    private Personal_info person;
+//    @OneToOne
+//    @MapsId
+//    private Person person;
+    @OneToOne(mappedBy = "address")
+    private Person person;
 
     public Address(){
 

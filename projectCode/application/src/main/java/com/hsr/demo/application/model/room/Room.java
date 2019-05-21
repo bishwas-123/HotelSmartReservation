@@ -1,5 +1,7 @@
 package com.hsr.demo.application.model.room;
 
+import com.hsr.demo.application.model.review.Review;
+
 import javax.persistence.*;
 
 @Entity

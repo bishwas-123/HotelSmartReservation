@@ -1,24 +1,42 @@
 package com.hsr.demo.application.model.user;
 
+import com.hsr.demo.application.model.review.Review;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
-public class Personal_info {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
+
+    @NotNull(message = "First name is required")
     private String firstName="";
+
     private String midName="";
+
+    @NotNull(message = "Last name is required")
     private String lastName="";
+
+    @NotNull(message = "Phone number is required")
     private String phone="";
+
     private LocalDate createDate;
-    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+//    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+//    private Address address;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "person_address",
+            joinColumns = { @JoinColumn(name = "personId", referencedColumnName = "id") },
+            inverseJoinColumns = { @JoinColumn(name = "AddressId", referencedColumnName = "id") })
     private Address address;
 
 
 
-    public Personal_info(String firstName, String midName, String lastName, String phone) {
+
+
+    public Person(String firstName, String midName, String lastName, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -34,7 +52,7 @@ public class Personal_info {
         this.Id = id;
     }
 
-    public Personal_info() {
+    public Person() {
     }
 
     public String getFirstName() {
