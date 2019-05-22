@@ -16,7 +16,13 @@ public class Reservation {
     private LocalDate checkoutDate;
     private Integer numberOfOccupants;
 
-    @OneToOne (mappedBy = "reservation", cascade = CascadeType.ALL)
+//    @OneToOne (mappedBy = "reservation", cascade = CascadeType.ALL)
+//    private Invoice invoice;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "reservation_invoice",
+            joinColumns = { @JoinColumn(name = "reservationId", referencedColumnName = "id") },
+            inverseJoinColumns = { @JoinColumn(name = "invoiceId", referencedColumnName = "id") })
     private Invoice invoice;
 
     @OneToOne (mappedBy = "reservation", cascade = CascadeType.ALL)

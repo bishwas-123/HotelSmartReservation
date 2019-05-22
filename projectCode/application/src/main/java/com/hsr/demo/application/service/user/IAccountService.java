@@ -7,5 +7,5 @@ import java.util.List;
 public interface IAccountService {
     List<Account> findAll();
     Account save(Account account);
-    Account finById(Integer accountId);
+    Account findById(Integer accountId);
 }

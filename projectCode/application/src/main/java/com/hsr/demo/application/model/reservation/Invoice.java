@@ -11,8 +11,10 @@ public class Invoice {
     private LocalDate createdDate;
     private Long invoiceNumber;
     private Double invoiceAmount;
-    @OneToOne
-    @MapsId
+//    @OneToOne
+//    @MapsId
+//    private Reservation reservation;
+    @OneToOne(mappedBy = "invoice")
     private Reservation reservation;
 
     public Invoice(LocalDate createdDate, Long invoiceNumber, Double invoiceAmount, Reservation reservation) {

@@ -12,5 +12,4 @@ public class HomePageController {
         return "customer/index";
     }
 
-
 }
