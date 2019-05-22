@@ -7,5 +7,5 @@ import java.util.List;
 public interface IPersonService {
     List<Person> findAll();
     Person save(Person person);
-    Person finById(Integer personId);
+    Person findById(Integer personId);
 }

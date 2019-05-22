@@ -7,5 +7,5 @@ import java.util.List;
 public interface IAddressService {
     List<Address> findAll();
     Address save(Address address);
-    Address finById(Integer addressId);
+    Address findById(Integer addressId);
 }

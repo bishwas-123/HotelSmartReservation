@@ -30,7 +30,7 @@ public class PersonService implements IPersonService {
     }
 
     @Override
-    public Person finById(Integer personId) {
+    public Person findById(Integer personId) {
         return personRepository.findById(personId).orElse(null);
     }
 }

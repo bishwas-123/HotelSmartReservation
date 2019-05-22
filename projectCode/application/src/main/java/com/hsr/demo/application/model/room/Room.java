@@ -10,7 +10,7 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer roomNumber;
+    private String roomNumber;
     private Double price;
     private Double area;
 
@@ -26,7 +26,7 @@ public class Room {
     @JoinColumn(name="roomStatus")
     private RoomStatus roomStatus;
 
-    public Room(Integer roomNumber, Double price, Double area, BedType bedType, RoomType roomType, RoomStatus roomStatus) {
+    public Room(String roomNumber, Double price, Double area, BedType bedType, RoomType roomType, RoomStatus roomStatus) {
         this.roomNumber = roomNumber;
         this.price = price;
         this.area = area;
@@ -46,11 +46,11 @@ public class Room {
         this.id = id;
     }
 
-    public Integer getRoomNumber() {
+    public String getRoomNumber() {
         return roomNumber;
     }
 
-    public void setRoomNumber(Integer roomNumber) {
+    public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
     }
 

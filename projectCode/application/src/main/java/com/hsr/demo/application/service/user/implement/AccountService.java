@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class AccontService implements IAccountService {
+public class AccountService implements IAccountService {
 
     private IAccountRepository accountRepository;
-    public AccontService(IAccountRepository accountRepository){
+    public AccountService(IAccountRepository accountRepository){
         this.accountRepository=accountRepository;
     }
 
@@ -27,7 +27,7 @@ public class AccontService implements IAccountService {
     }
 
     @Override
-    public Account finById(Integer accountId) {
+    public Account findById(Integer accountId) {
         return accountRepository.findById(accountId).orElse(null);
     }
 }

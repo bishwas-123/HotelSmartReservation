@@ -28,7 +28,7 @@ public class AddressService implements IAddressService {
     }
 
     @Override
-    public Address finById(Integer addressId) {
+    public Address findById(Integer addressId) {
         return addressRepository.findById(addressId).orElse(null);
     }
 }

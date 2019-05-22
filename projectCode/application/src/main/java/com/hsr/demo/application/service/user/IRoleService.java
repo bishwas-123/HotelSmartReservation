@@ -8,5 +8,5 @@ import java.util.List;
 public interface IRoleService {
     List<Role> findAll();
     Role save(Role role);
-    Role finById(Integer roleId);
+    Role findById(Integer roleId);
 }
