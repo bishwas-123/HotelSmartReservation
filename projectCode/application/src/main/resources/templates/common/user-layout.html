@@ -8,22 +8,18 @@
     <title>HOTEL SMART RESERVATION SYSTEM</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<!--    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">-->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
     <link th:href="@{css/style.css}" rel="stylesheet" type="text/css" media="all" />
     <link th:href="@{css/custom.css}" rel="stylesheet" type="text/css" media="all" />
-    <script th:src="@{js/jquery.min.js}"></script>
-    <!--start slider -->
-    <link rel="stylesheet" th:href="@{css/fwslider.css}" media="all">
-    <script th:src="@{js/jquery-ui.min.js}"></script>
+
     <script th:src="@{js/css3-mediaqueries.js}"></script>
-    <script th:src="@{js/fwslider.js}"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--end slider -->
     <!---strat-date-piker---->
-    <link rel="stylesheet" th:href="@{css/jquery-ui.css}" />
-    <script th:src="@{js/jquery-ui.js}"></script>
+
     <script>
         $(function() {
             var pull 		= $('#pull');
@@ -49,7 +45,7 @@
 <div class="header_bg">
     <div class="wrap">
         <div class="header">
-            <a href="/">
+            <a href="/user">
                 <div class="logo">
 
                     Hotel Smart Reservation System
@@ -58,12 +54,12 @@
             <div class="h_right">
                 <!--start menu -->
                 <ul class="menu">
-                    <li class="active"><a href="/">Hotel</a></li> |
+                    <li class="active"><a href="/user">Home</a></li> |
                     <li><a href="#">Rooms</a></li> |
                     <li><a href="#">Reservation</a></li> |
                     <li><a href="#">Activities</a></li> |
                     <li><a href="#">Contact</a></li>
-                    <li><a href="login.html">login</a></li>
+                    <li><a href="/login">login</a></li>
                     <li><a href="login.html"></a></li>
                     <div class="clear"></div>
                 </ul>
@@ -105,7 +101,7 @@
             </div>
             <div class="f_nav">
                 <ul>
-                    <li><a href="/">home</a></li>
+                    <li><a href="/user">home</a></li>
                     <li><a href="/">rooms & suits</a></li>
                     <li><a href="/">reservation</a></li>
                     <li><a href="/">Contact</a></li>

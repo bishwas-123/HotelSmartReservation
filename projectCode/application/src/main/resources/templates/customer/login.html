@@ -14,13 +14,25 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<style type="text/css">
+    .footer_bg{
+        position: absolute;
+        bottom:0px;
+        width:100%;
+    }
+    .main_bg {
+        margin-top: 40px;
+        margin-bottom: 60px;
+        background: white;
+    }
+    .m
+</style>
 
     <div class="main_bg">
 
         <div class="wrap">
             <div class="container">
-                <form action="/action_page.php">
+                <form action="#">
                     <div class="row">
                         <!-- <h2 style="text-align:center">Login with Social Media or Manually</h2> -->
                         <div class="vl">
@@ -99,33 +111,44 @@
 
     <div id="id01" class="modal">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-        <form class="modal-content"  style="padding: 15px;">
+        method="post" action="/product/save" th:object="${product}"
+        <form method="post" action="/saveuser" class="modal-content"  style="padding: 15px;">
+            <fieldset style="font-weight: bolder;"> <h3>Register New User</h3></fieldset>
             <div class="row">
 
                 <div class="col-sm-6">
+                   <div> <!-- person division -->
+                       <div class="input-container">
+                           <i class="fa fa-user icon"></i>
+                           <input class="form-control input-field" type="text" placeholder="First Name" name="firstName">
+                       </div>
+                       <div class="input-container">
+                           <i class="fa fa-user icon"></i>
+                           <input class="input-field form-control" type="text" placeholder="Middle Name" name="midName">
+                       </div>
+                       <div class="input-container">
+                           <i class="fa fa-user icon"></i>
+                           <input class="input-field form-control" type="text" placeholder="Last Name" name="lastName" >
+                       </div>
+                       <div class="input-container">
+                           <i class="fa fa-phone icon"></i>
+                           <input class="input-field form-control" type="text" placeholder="Phone" name="phone">
+                       </div>
+
+                   </div>
+
+
+
 
                     <div class="input-container">
-                        <i class="fa fa-user icon"></i>
-                        <input class="form-control input-field" type="text" placeholder="First Name" name="firstName">
-                    </div>
-                    <div class="input-container">
-                        <i class="fa fa-user icon"></i>
-                        <input class="input-field form-control" type="text" placeholder="Middle Name" name="middleName">
-                    </div>
-                    <div class="input-container">
-                        <i class="fa fa-user icon"></i>
-                        <input class="input-field form-control" type="text" placeholder="Last Name" name="lastName">
-                    </div>
-                    <div class="input-container">
                         <i class="fa fa-address-card icon"></i>
-                        <input class="input-field form-control" type="text" placeholder="AddressLine " name="addressLine">
+                        <input class="input-field form-control" type="text" placeholder="AddressLine " name="addressline">
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="input-container">
                                 <i class="fa fa-address-card icon"></i>
-                                <input class="form-control" type="text" placeholder="City " name="city">
+                                <input class="form-control" type="text" placeholder="City"  name="city">
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -137,47 +160,48 @@
                         <div class="col-sm-4">
                             <div class="input-container">
                                 <i class="fa fa-address-card icon"></i>
-                                <input class="form-control" type="text" placeholder="Zipcode" name="zipcode">
+                                <input class="form-control" type="text" placeholder="Zipcode"  name="zip">
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
-
                 </div>
                 <div class="col-sm-6">
-                    <div class="input-container">
-                        <i class="fa fa-user icon"></i>
-                        <input class="input-field form-control" type="text" placeholder="Username" name="usrnm">
-                    </div>
-                    <div class="input-container">
-                        <i class="fa fa-phone icon"></i>
-                        <input class="input-field form-control" type="text" placeholder="Phone" name="phone">
-                    </div>
-                    <div class="input-container">
-                        <i class="fa fa-envelope icon"></i>
-                        <input class="input-field form-control" type="text" placeholder="Email" name="email">
+
+                    <div>
+
+
+                        <!account div -->
+
+
+                        <div class="input-container">
+                            <i class="fa fa-user icon"></i>
+                            <input class="input-field form-control" type="text" placeholder="Username" name="userName">
+                        </div>
+
+                        <div class="input-container">
+                            <i class="fa fa-envelope icon"></i>
+                            <input class="input-field form-control" type="text" placeholder="Email" name="emailAddress">
+                        </div>
+
+                        <!--                    <div class="input-container">-->
+                        <!--                        <i class="fa fa-key icon"></i>-->
+                        <!--                        <input class="input-field form-control" type="password" placeholder="Password" >-->
+                        <!--                    </div>-->
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input class="input-field form-control" type="password" placeholder="Confirm Password"  name="password">
+                        </div>
+
+
                     </div>
 
-                    <div class="input-container">
-                        <i class="fa fa-key icon"></i>
-                        <input class="input-field form-control" type="password" placeholder="Password" name="psw">
-                    </div>
-                    <div class="input-container">
-                        <i class="fa fa-key icon"></i>
-                        <input class="input-field form-control" type="password" placeholder="Password" name="psw">
-                    </div>
 
                 </div>
 
-                <div class="col-sm-10"></div>
-                <div class="col-sm-2">
-                    <button type="submit" class="btn btn-info">Register</button>
-                </div>
+                <div class="col-sm-8"></div>
+
+                <div class="col-sm-2"><button type="clear" class="btn btn-deafult">Cancel</button></div>
+                <div class="col-sm-2"><button type="submit" class="btn btn-info">Register</button></div>
 
                 <!-- <div class="col-sm-4"></div> -->
             </div>

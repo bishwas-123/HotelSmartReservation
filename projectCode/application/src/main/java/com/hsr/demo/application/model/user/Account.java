@@ -59,7 +59,7 @@ public class Account {
         this.createdDate = LocalDate.now();
         this.reward = 0;
     }
-
+public Account(){}
     public Integer getReward() {
         return reward;
     }
