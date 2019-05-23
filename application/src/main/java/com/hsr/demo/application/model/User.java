@@ -35,6 +35,13 @@ public class User {
     @Email
     private String emailAddress;
 
+
+    private String addressLine;
+    private String city;
+    private String State;
+    private String zipCode;
+    private String country;
+
     private String role;
 
     private LocalDate createDate;
@@ -118,6 +125,46 @@ public class User {
         this.emailAddress = emailAddress;
     }
 
+    public String getAddressLine() {
+        return addressLine;
+    }
+
+    public void setAddressLine(String addressLine) {
+        this.addressLine = addressLine;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return State;
+    }
+
+    public void setState(String state) {
+        State = state;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     public LocalDate getCreateDate() {
         return createDate;
     }
@@ -132,5 +179,12 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String userName(){
+        return firstName+" "+midName+" "+lastName;
+    }
+    public String userAddress(){
+        return addressLine+"\n"+city+", "+State+"\n"+zipCode+", "+country;
     }
 }

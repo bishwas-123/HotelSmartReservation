@@ -27,4 +27,6 @@ public class RoomService implements IRoomService {
     public Room findById(Integer roomId) {
         return roomRepository.findById(roomId).orElse(null);
     }
+
+
 }
