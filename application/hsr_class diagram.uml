@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="58.84375" y="1116.0">com.hsr.demo.application.model.Reservation</node>
+    <node x="0.0" y="220.0">com.hsr.demo.application.model.Room</node>
+    <node x="457.5" y="926.0">com.hsr.demo.application.model.Review</node>
+    <node x="232.84375" y="0.0">com.hsr.demo.application.model.User</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.hsr.demo.application.model.Review" target="com.hsr.demo.application.model.User">
+      <point x="36.25" y="-115.0" />
+      <point x="430.25" y="1091.0" />
+      <point x="412.21875" y="1091.0" />
+      <point x="76.875" y="533.0" />
+    </edge>
+    <edge source="com.hsr.demo.application.model.Reservation" target="com.hsr.demo.application.model.User">
+      <point x="90.0" y="-368.0" />
+      <point x="268.84375" y="1091.0" />
+      <point x="309.71875" y="1091.0" />
+      <point x="-25.625" y="533.0" />
+    </edge>
+    <edge source="com.hsr.demo.application.model.Reservation" target="com.hsr.demo.application.model.Room">
+      <point x="-90.0" y="-368.0" />
+      <point x="88.84375" y="1091.0" />
+      <point x="50.5" y="1091.0" />
+      <point x="-50.5" y="313.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="1266.0" />
+  <SelectedNodes>
+    <node>com.hsr.demo.application.model.Review</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
