@@ -24,14 +24,14 @@ public class RoomControl {
         ModelAndView modelAndView = new ModelAndView();
         List<Room> roomList=roomService.findAll();
         modelAndView.addObject("roomList", roomList);
-        modelAndView.setViewName("admin/roomlist");
+        modelAndView.setViewName("rooms/roomlist");
         return modelAndView;
     }
 
     @GetMapping(value = "/newroom")
     public String newRooms(Model model){
         model.addAttribute("newroom", new Room());
-        return "admin/newroom";
+        return "rooms/newroom";
     }
 
     @PostMapping(value = "/newroom")
@@ -39,7 +39,7 @@ public class RoomControl {
                                  BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getAllErrors());
-            return "admin/newroom";
+            return "rooms/newroom";
         }
         room = roomService.save(room);
         return "redirect:/hsr/viewrooms";
@@ -50,16 +50,16 @@ public class RoomControl {
         Room room = roomService.findById(roomId);
         if (room != null) {
             model.addAttribute("room", room);
-            return "admin/editroom";
+            return "rooms/editroom";
         }
-        return "admin/roomlist";
+        return "rooms/roomlist";
     }
     @PostMapping(value = "/room/save")
     public String updateProduct(@Valid @ModelAttribute("room") Room room,
                                 BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getAllErrors());
-            return "admin/editroom";
+            return "rooms/editroom";
         }
         roomService.save(room);
         return "redirect:/hsr/viewrooms";
