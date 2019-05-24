@@ -33,16 +33,16 @@ public class User {
 
     @NotNull(message = "Email address is required")
     @Email
-    private String emailAddress;
+    private String emailAddress="";
 
 
-    private String addressLine;
-    private String city;
-    private String State;
-    private String zipCode;
-    private String country;
+    private String addressLine="";
+    private String city="";
+    private String State="";
+    private String zipCode="";
+    private String country="";
 
-    private String role;
+    private String role="";
 
     private LocalDate createDate;
 
